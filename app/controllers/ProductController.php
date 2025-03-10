@@ -94,6 +94,8 @@ class ProductController extends Controller
         $productModel = new Product();
         if ($productModel->deleteProduct($id)) {
             echo "Product deleted successfully!";
+            header("Location: /gear_management/public/home");
+            exit();
         } else {
             echo "Failed to delete product.";
         }
